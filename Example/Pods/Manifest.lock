@@ -1,0 +1,16 @@
+PODS:
+  - Discoverable (0.1.0)
+
+DEPENDENCIES:
+  - Discoverable (from `../`)
+
+EXTERNAL SOURCES:
+  Discoverable:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Discoverable: a548aa2b0843021b870b78faf970c3fd62183ac3
+
+PODFILE CHECKSUM: fbf765e331c397e38dc9c5b155e75d32746108ad
+
+COCOAPODS: 1.9.3

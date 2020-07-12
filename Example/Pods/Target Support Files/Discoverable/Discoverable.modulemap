@@ -1,0 +1,6 @@
+framework module Discoverable {
+  umbrella header "Discoverable-umbrella.h"
+
+  export *
+  module * { export * }
+}

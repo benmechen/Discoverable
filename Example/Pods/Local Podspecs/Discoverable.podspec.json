@@ -1,0 +1,22 @@
+{
+  "name": "Discoverable",
+  "version": "0.1.0",
+  "summary": "A short description of Discoverable.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/benmechen/Discoverable",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "benmechen": "benm123@yahoo.com"
+  },
+  "source": {
+    "git": "https://github.com/benmechen/Discoverable.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Discoverable/Classes/**/*"
+}

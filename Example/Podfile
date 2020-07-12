@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Discoverable_Example' do
+  pod 'Discoverable', :path => '../'
+
+  target 'Discoverable_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
