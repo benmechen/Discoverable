@@ -78,7 +78,7 @@ class ConnectionService: NSObject {
     /// Local discovered variable, mirrored by the `NetServiceBrowserDelegateExtension`
     private var _discovered = false
     // Temporarily store port while searching for services
-    private var resolverPort?
+    private var resolverPort: UInt16?
     
     /// The state of the connection handled by the service instance
     enum State: Equatable {
@@ -266,12 +266,7 @@ class ConnectionService: NSObject {
             return 0
         }
         
-        do {
-            try self.strengthBuffer.append(percent)
-        } catch _ {
-            print()
-        }
-        
+        self.strengthBuffer.append(percent)
         
         self.strengthBuffer = Array(self.strengthBuffer.suffix(5))
         
@@ -432,7 +427,7 @@ extension ConnectionService: NetServiceBrowserDelegate, NetServiceBrowserDelegat
     /// - Parameter sender: Resolve service
     func netServiceDidResolveAddress(_ sender: NetService) {
         if let serviceIp = resolveIPv4(addresses: sender.addresses!) {
-            self.connect(to: serviceIp, on: port ?? 1024)
+            self.connect(to: serviceIp, on: resolverPort ?? 1024)
         } else {
             self.set(state: .failed(.discoverResolveFailed))
         }
