@@ -50,7 +50,7 @@ protocol DiscoverableDelegate {
  To automatically discover the server, it must be
  advertising on the local mDNS network with the same name and type as supplied to the `discover(type: String)` function. If the service cannot find the server's advertisement within 5 seconds, the service will abort the search and return a `failed` state.
  */
-class Discoverable: NSObject {
+public class Discoverable: NSObject {
     /// Delegate class implementing `DiscoverableDelegate` protocol. Used to send connction status updates to.
     var delegate: DiscoverableDelegate?
     /// Singleton instance to access the service from any screen
