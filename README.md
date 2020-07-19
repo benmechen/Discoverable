@@ -47,12 +47,7 @@ The framework uses Apple's Network framework, which is available on iOS 12+.
 
 ## Installation
 
-Discoverable is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'Discoverable'
-```
+Discoverable is a Swift Package Manager package. Follow the instructions [here](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) to install add the dependency to your app.
 
 ## API
 
