@@ -98,10 +98,7 @@ public class Discoverable {
 //    fileprivate override init() {
 //        super.init()
 //    }
-    public init() {
-        super.init()
-    }
-    
+
     /// Remove any timeout clocks to save memory and avoid trying to close a dead connection
     deinit {
         killClocks()
