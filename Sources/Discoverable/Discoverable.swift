@@ -50,7 +50,7 @@ public protocol DiscoverableDelegate {
  To automatically discover the server, it must be
  advertising on the local mDNS network with the same name and type as supplied to the `discover(type: String)` function. If the service cannot find the server's advertisement within 5 seconds, the service will abort the search and return a `failed` state.
  */
-public class Discoverable {
+public class Discoverable: NSObject {
     /// Delegate class implementing `DiscoverableDelegate` protocol. Used to send connction status updates to.
     var delegate: DiscoverableDelegate?
     /// Singleton instance to access the service from any screen
@@ -364,7 +364,7 @@ extension Discoverable: NetServiceBrowserDelegate, NetServiceBrowserDelegateExte
     /// - Parameters:
     ///   - browser: Browser instance
     ///   - success: Did the browser discover the service in time
-    func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser, success: Bool) {
+    public func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser, success: Bool) {
         if !success {
             self.set(state: .failed(.discoverTimeout))
         }
@@ -378,7 +378,7 @@ extension Discoverable: NetServiceBrowserDelegate, NetServiceBrowserDelegateExte
     ///   - browser: Browser instance
     ///   - service: Service found
     ///   - moreComing: Were more services discovered
-    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
         self._discovered = true
         
         guard self.service == nil else {
@@ -427,7 +427,7 @@ extension Discoverable: NetServiceBrowserDelegate, NetServiceBrowserDelegateExte
     
     /// Resolve service got an IP address of the discovered server and connect to the server at that address
     /// - Parameter sender: Resolve service
-    func netServiceDidResolveAddress(_ sender: NetService) {
+    public func netServiceDidResolveAddress(_ sender: NetService) {
         if let serviceIp = resolveIPv4(addresses: sender.addresses!) {
             self.connect(to: serviceIp, on: resolverPort ?? 1024)
         } else {

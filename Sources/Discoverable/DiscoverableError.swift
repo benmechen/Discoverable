@@ -14,7 +14,7 @@ import Network
 ///     * POSIX errors –> `connect` prefix, signify errors from the foundation level C library POSIX, used as a fundamental base for iOS connections
 ///     * Bonjour service discovery errors –> `discover` prefix, signify errors ran into whilst trying to discover the server advertising on the local network using the Bonjour protocol
 ///     * Service resolve errors –> `discoverResolve` prefix, signify errors ran into in the second component of the discovery process; resolving the server's IP address from the discovered services
-enum DiscoverableError: Error {
+public enum DiscoverableError: Error {
     /// Other connection error
     case connectOther
     /// POSIX address not available
