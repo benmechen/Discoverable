@@ -83,7 +83,7 @@ public class Discoverable {
     private var resolverPort: UInt16?
     
     /// The state of the connection handled by the service instance
-    enum State: Equatable {
+    public enum State: Equatable {
         /// Connection currently open, sending and receiving data
         case connected
         /// Connection in progress, no sending, only receiving data
