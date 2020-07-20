@@ -406,7 +406,7 @@ extension Discoverable: NetServiceBrowserDelegate, NetServiceBrowserDelegateExte
     /// - Parameters:
     ///   - sender: Resolve service
     ///   - errorDict: Errors from NetService
-    func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
+    public func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
         for key in errorDict.keys {
             switch errorDict[key] {
             case -72002:
