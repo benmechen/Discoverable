@@ -14,7 +14,7 @@ import os.log
 import UIKit
 
 /// Connection protocol with set messages to interact with the corresponding server
-enum DiscoverableProtocol: String {
+public enum DiscoverableProtocol: String {
     /// Disconnect & shut down server
     case disconnect = "dscv_disconnect"
     /// Send greeting to server, with device name appended in the format: ":device_name"
@@ -26,7 +26,7 @@ enum DiscoverableProtocol: String {
 }
 
 /// Protocol for Discoverable caller to conform to in order to received updates about the connection state and strength
-protocol DiscoverableDelegate {
+public protocol DiscoverableDelegate {
     /// Updates the current state of the connection
     /// - Parameter state: New state
     func connectionState(state: Discoverable.State)
