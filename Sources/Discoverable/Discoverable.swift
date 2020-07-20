@@ -52,11 +52,11 @@ public protocol DiscoverableDelegate {
  */
 public class Discoverable: NSObject {
     /// Delegate class implementing `DiscoverableDelegate` protocol. Used to send connction status updates to.
-    var delegate: DiscoverableDelegate?
+    public var delegate: DiscoverableDelegate?
     /// Singleton instance to access the service from any screen
-    static var shared = Discoverable()
+    public static var shared = Discoverable()
     /// The current connection state
-    var state: Discoverable.State = .disconnected
+    public var state: Discoverable.State = .disconnected
     /// Raw connection, used for sending and receiving the UDP connection component of the connection
     private var connection: NWConnection?
     /// Bonjour service browser, used for discovering the server advertising locally on the Bonjour protocol
